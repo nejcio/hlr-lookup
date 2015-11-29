@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Bootstrap\App;
+use App\Models\HLR;
 
 class IndexController
 {
@@ -11,20 +12,33 @@ class IndexController
     | Index Controller
     |--------------------------------------------------------------------------
     |
-    | Controller that handles main requests
+    | Controller that handles main app requests
     |
     */
 
     protected $app;
 
     /**
-     * Router constructor
-     * @param array $app array of aplication variables
+     * Controller constructor
+     *  @param object $app       app spacific object
      */
     function __construct(App $app)
     {
 
         $this->app = $app;
+
+    }
+
+    /**
+     * Landing page of the app
+     * @return view returns the index view
+     */
+    public function index()
+    {
+
+        //CSRF
+
+       //view Render
 
     }
 

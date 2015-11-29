@@ -18,8 +18,8 @@ class APIController
     protected $app;
 
     /**
-     * Router constructor
-     * @param array $app array of aplication variables
+     * Controller constructor
+     * @param object $app       app spacific object
      */
     function __construct(App $app)
     {
