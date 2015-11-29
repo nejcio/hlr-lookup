@@ -11,7 +11,7 @@ class HLR
     | HLR Model
     |--------------------------------------------------------------------------
     |
-    | This model does the HLR lookup for MSISDN
+    | This model does the HLR lookup
     |
     */
 

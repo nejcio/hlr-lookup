@@ -55,13 +55,14 @@ class IndexController
         session_start();
 
         (array_key_exists('csrf', $_POST)) ? $postscrf =htmlspecialchars($_POST["csrf"]) : $postscrf = '';
+
         $csrfCheck = CSRF::csrfCheck($postscrf, $_SESSION['csrf'] );
 
         if($csrfCheck):
 
-            (array_key_exists('MSISDN', $_POST)) ? $postmsisdn =htmlspecialchars($_POST["MSISDN"]) : $postmsisdn = '';
+            (array_key_exists('MSISDN', $_POST)) ? $postmsisdn = htmlspecialchars($_POST["MSISDN"]) : $postmsisdn = '';
 
-            $validated = MSISDN::senitize($_POST['MSISDN']);
+            $validated = MSISDN::senitize($postmsisdn);
 
             if($validated):
 
