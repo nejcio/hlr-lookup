@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use Bootstrap\App;
 use App\Models\HLR;
+use App\Validators\CSRF;
+use App\Validators\MSISDN;
 
 class IndexController
 {
@@ -31,15 +33,60 @@ class IndexController
 
     /**
      * Landing page of the app
-     * @return view returns the index view
+     * @return view     returns the index view
      */
     public function index()
     {
 
-        //CSRF
+        $data = ['csrf_token'=> CSRF::createToken()];
 
        //view Render
 
+    }
+
+    /**
+     * This method handles the post request
+     * @return json    returns the json response
+     */
+    public function handle()
+    {
+
+        session_start();
+
+        (array_key_exists('csrf', $_POST)) ? $postscrf =htmlspecialchars($_POST["csrf"]) : $postscrf = '';
+        $csrfCheck = CSRF::csrfCheck($postscrf, $_SESSION['csrf'] );
+
+        if($csrfCheck):
+
+            (array_key_exists('MSISDN', $_POST)) ? $postmsisdn =htmlspecialchars($_POST["MSISDN"]) : $postmsisdn = '';
+
+            $validated = MSISDN::senitize($_POST['MSISDN']);
+
+            if($validated):
+
+                $hlr = new HLR($this->app);
+
+                $lookup = $hlr->lookUp($validated);
+
+                echo json_encode( ['success' => 'success','data' => $lookup]);
+
+                return;
+
+            else:
+
+                echo json_encode(['success' => 'failed', 'data' => ['ERROR' => 'Not a valid number!']]);
+
+                return;
+
+            endif;
+
+        else :
+
+            echo json_encode(['success' => 'failed', 'data'=> ['ERROR' => 'CSRF failed!']]);
+
+            return;
+
+        endif;
     }
 
 
