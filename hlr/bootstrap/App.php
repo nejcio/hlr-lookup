@@ -32,7 +32,7 @@ class App
     }
 
     /**
-     * App all application veriables
+     * This method merges application and configuration variables
      * @return array    array of application variables
      */
     public function getAppVariables()
@@ -41,7 +41,7 @@ class App
     }
 
     /**
-     *  App all application veriables
+     * This method gets the desired variable from app configuration
      * @param  string $variable         name of desired config variable
      * @param  array $variables         array of configuration variables
      * @param  string $desiredVariable  desired variable

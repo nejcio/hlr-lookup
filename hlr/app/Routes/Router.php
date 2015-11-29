@@ -23,11 +23,13 @@ class Router implements RouterInterface
 
     /**
      * Router constructor
-     * @param array $app array of aplication variables
+     * @param object $app   app spacific object
      */
     public function __construct(App $app)
     {
+
         $this->app = $app;
+
     }
 
     /**
@@ -82,9 +84,9 @@ class Router implements RouterInterface
     }
 
     /**
-     * [findController description]
-     * @param  [type] $preetyfiedRequest [description]
-     * @return [type]                    [description]
+     * Controller Finder - finds a controller that will handle the request
+     * @param  array $preetyfiedRequest     prettified request
+     * @return string                       controller and associated method
      */
     public function findController($preetyfiedRequest)
     {

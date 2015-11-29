@@ -15,7 +15,7 @@ class RouteList
     */
 
   /**
-   * Returns Active List of routes
+   * Returns a list of active routes
    * @return array list of routes
    */
   public static function routes() {
