@@ -4,7 +4,6 @@ namespace Bootstrap;
 
 class App
 {
-
     /*
     |--------------------------------------------------------------------------
     | Main Application Model
