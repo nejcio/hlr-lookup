@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Bootstrap\App;
 use App\Models\HLR;
+use App\View\View;
 use App\Validators\CSRF;
 use App\Validators\MSISDN;
 
@@ -40,7 +41,7 @@ class IndexController
 
         $data = ['csrf_token'=> CSRF::createToken()];
 
-       //view Render
+        return View::render($this->app->getAppVariable('VIEW_PATH') . 'index.php', $data);
 
     }
 
@@ -88,6 +89,5 @@ class IndexController
 
         endif;
     }
-
 
 }
