@@ -11,7 +11,7 @@ return [
      |
      */
 
-     'API_USERNAME' => 'hlrlookups_com_username',
+     'API_USERNAME' => 'srednjiveter',
 
      /*
      |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ return [
      | Password for hlrlookups.com
      |
      */
-     'API_PASS' => 'hlrlookups_com_password',
+     'API_PASS' => 'geslosrednjiveter',
 
      /*
      |--------------------------------------------------------------------------
@@ -31,5 +31,5 @@ return [
      | Our Application api key
      |
      */
-     'API_KEY' => 'your_awesome_api_key_for_the_app'
+     'API_KEY' => 'ApiTheKeY'
  ];
