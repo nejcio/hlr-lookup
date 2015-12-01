@@ -1,6 +1,6 @@
 # HLR Lookup App
 
-PHP HLR Look up app using [hlr-lookups](https://www.hlr-lookups.com/) Hlr-lookups API.
+PHP HLR Look up App using [Hlr-lookups](https://www.hlr-lookups.com/) API.
 
 ##Requirements
 
