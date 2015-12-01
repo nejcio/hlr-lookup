@@ -11,7 +11,7 @@ return [
      |
      */
 
-     'API_USERNAME' => 'srednjiveter',
+     'API_USERNAME' => 'krexro',
 
      /*
      |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ return [
      | Password for hlrlookups.com
      |
      */
-     'API_PASS' => 'geslosrednjiveter',
+     'API_PASS' => '46824HLRgesLo',
 
      /*
      |--------------------------------------------------------------------------
