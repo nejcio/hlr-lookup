@@ -1,15 +1,15 @@
 # HLR Lookup App
 
-PHP HLR Look up app using <a href="https://www.hlr-lookups.com/">hlr-lookups</a> API.
+PHP HLR Look up app using [hlr-lookups](https://www.hlr-lookups.com/) Hlr-lookups API.
 
 ##Requirements
 
--PHP 5.6
--cUrl
--Composer
+*PHP 5.6
+*cUrl
+*omposer
 
 ## Installation
- Use our Ubuntu Vagrantbox with Ansible : <a href="https://bitbucket.org/wrcx/hlr-boot">HLR Boot</a> or simply clone the repo.
+ Use our Ubuntu Vagrantbox with Ansible : [HLR Boot](https://bitbucket.org/wrcx/hlr-boot) or simply clone the repo.
 
 
 ### License
