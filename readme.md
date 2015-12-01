@@ -4,9 +4,9 @@ PHP HLR Look up app using [hlr-lookups](https://www.hlr-lookups.com/) Hlr-lookup
 
 ##Requirements
 
-*PHP 5.6
-*cUrl
-*omposer
+1. PHP 5.6
+2. cUrl
+3. Composer
 
 ## Installation
  Use our Ubuntu Vagrantbox with Ansible : [HLR Boot](https://bitbucket.org/wrcx/hlr-boot) or simply clone the repo.
