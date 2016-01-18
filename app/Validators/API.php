@@ -11,7 +11,7 @@ class API
     |
     | Validates the api key from the request
     |
-    */
+     */
 
     /**
      * Validates the api key from the request
@@ -20,16 +20,10 @@ class API
      */
     public static function APIkey_check($post_apikey, $app)
     {
-
-        if(htmlspecialchars($post_apikey) !== $app->getAppVariable('API_KEY')):
-
+        if (htmlspecialchars($post_apikey) !== $app->getAppVariable('API_KEY')):
             return false;
-
         else:
-
             return true;
-
         endif;
-
     }
 }

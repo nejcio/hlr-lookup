@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Bootstrap\App;
 use App\Routes\Router;
+use Bootstrap\App;
 
 class RoutesTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,22 +13,14 @@ class RoutesTest extends \PHPUnit_Framework_TestCase
      */
     public function testFindController()
     {
-
-        $configuration = require_once __DIR__.'/../config/config.php';
-
-        $aplication = require_once __DIR__.'/../config/app.php';
-
-        $app = new App($aplication, $configuration);
-
-        $router = new Router($app);
-
-        $controller = $router->findController([
+        $configuration = require_once __DIR__ . '/../config/config.php';
+        $aplication    = require_once __DIR__ . '/../config/app.php';
+        $app           = new App($aplication, $configuration);
+        $router        = new Router($app);
+        $controller    = $router->findController([
             'action' => 'get',
-            'uri'    => '/'
-            ]);
-
+            'uri'    => '/',
+        ]);
         $this->assertEquals($controller, 'IndexController@index');
-
     }
-
 }

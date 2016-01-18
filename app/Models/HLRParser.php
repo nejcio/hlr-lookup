@@ -14,9 +14,8 @@ class HLRParser implements HLRInterface
     |
     | This model parses the response from HLR lookup service
     |
-    */
+     */
     protected $app;
-
     protected $input;
 
     /**
@@ -24,13 +23,10 @@ class HLRParser implements HLRInterface
      * @param object $app       app spacific object
      * @param string $input     input from text field
      */
-    function __construct($input, $app)
+    public function __construct($input, $app)
     {
-
-        $this->app = $app;
-
+        $this->app   = $app;
         $this->input = $input;
-
     }
 
     /**
@@ -39,11 +35,8 @@ class HLRParser implements HLRInterface
      */
     public function lookItUp()
     {
-
         $response = $this->getData($this->app, $this->input);
-
         return $response;
-
     }
 
     /**
@@ -53,16 +46,12 @@ class HLRParser implements HLRInterface
      * @param  string $input    input from text field
      * @return array            Array of parsed data
      */
-    public  function getData($app, $input)
+    public function getData($app, $input)
     {
-        $url = HLRLookups::urlBuilder($app, $input);
-
-        $data = $this->getHttp($url);
-
+        $url        = HLRLookups::urlBuilder($app, $input);
+        $data       = $this->getHttp($url);
         $parsedData = HLRLookups::responseParser($data);
-
         return $parsedData;
-
     }
 
     /**
@@ -72,34 +61,26 @@ class HLRParser implements HLRInterface
      */
     public function getHttp($url)
     {
-
         try {
-
             $ch = curl_init();
-
-            if ($ch === FALSE)
+            if ($ch === false) {
                 throw new \Exception('Failed to initialize');
+            }
 
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
             $output = curl_exec($ch);
-
-            if ($output === FALSE)
-
+            if ($output === false) {
                 throw new \Exception(curl_error($ch), curl_errno($ch));
+            }
 
             return $output;
-
-        } catch(\Exception $e) {
-
+        } catch (\Exception $e) {
             trigger_error(sprintf(
                 'Curl failed with error #%d: %s',
                 $e->getCode(), $e->getMessage()),
                 E_USER_ERROR);
         }
-
     }
-
 }
