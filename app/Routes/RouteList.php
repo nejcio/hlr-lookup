@@ -12,22 +12,18 @@ class RouteList
     |
     | Here is where you can register all of the routes for an application.
     |
-    */
+     */
 
-  /**
-   * Returns a list of active routes
-   * @return array list of routes
-   */
-  public static function routes() {
-
-    return [
-
-        ["uri" => "/", "action" => "get" ,"uses" => "IndexController@index"],
-        ["uri" => "/", "action" => "post" ,"uses" => "IndexController@handle"],
-        ["uri" => "/api", "action" => "get" ,"uses" => "APIController@handle"]
-
-    ];
-
-  }
-
+    /**
+     * Returns a list of active routes
+     * @return array list of routes
+     */
+    public static function routes()
+    {
+        return [
+            ["uri" => "/", "action" => "get", "uses" => "IndexController@index"],
+            ["uri" => "/", "action" => "post", "uses" => "IndexController@handle"],
+            ["uri" => "/api", "action" => "get", "uses" => "APIController@handle"],
+        ];
+    }
 }

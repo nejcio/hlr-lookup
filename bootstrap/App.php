@@ -11,11 +11,9 @@ class App
     |
     | This is main application model used across the app.
     |
-    */
-
+     */
     protected $configuration = array();
-
-    protected $app = array();
+    protected $app           = array();
 
     /**
      * App constructor
@@ -24,11 +22,8 @@ class App
      */
     public function __construct($configuration, $app)
     {
-
         $this->configuration = $configuration;
-
-        $this->app = $app;
-
+        $this->app           = $app;
     }
 
     /**
@@ -49,11 +44,8 @@ class App
      */
     public function getAppVariable($variable)
     {
-        $variables = array_merge($this->configuration, $this->app);
-
+        $variables                                                   = array_merge($this->configuration, $this->app);
         (array_key_exists($variable, $variables)) ? $desiredVariable = $variables[$variable] : $desiredVariable = null;
-
         return $desiredVariable;
     }
-
 }

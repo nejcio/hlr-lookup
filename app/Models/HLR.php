@@ -13,15 +13,14 @@ class HLR
     |
     | This model does the HLR lookup
     |
-    */
-
+     */
     protected $app;
 
     /**
      * HLR constructor
      * @param object $app       app spacific object
      */
-    function __construct($app)
+    public function __construct($app)
     {
         $this->app = $app;
     }
@@ -36,10 +35,7 @@ class HLR
     public function lookUp($input)
     {
         $hlrparser = new HLRParser($input, $this->app);
-
         $response  = $hlrparser->lookItUp();
-
         return $response;
-
     }
 }

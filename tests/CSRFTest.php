@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use  App\Validators\CSRF;
+use App\Validators\CSRF;
 
 class CSRFTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,5 +32,4 @@ class CSRFTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertTrue(is_string(CSRF::createToken()));
     }
-
 }

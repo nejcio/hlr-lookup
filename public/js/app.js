@@ -22,7 +22,7 @@
         var _data = new FormData($(this)[0]);
         var form = $(this)[0].reset();
         Tools.postAjax(_url,_data, function(ret){
-            var div = $('.success')
+            var div = $('.success');
             div.css({'display':'none'});
             div.empty();
             div.css({'display' : 'block'});
