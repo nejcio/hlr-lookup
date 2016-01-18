@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\HLR;
+use App\Models\HLRManager;
 use App\Validators\CSRF;
 use App\Validators\MSISDN;
 use App\View\View;
@@ -53,6 +54,7 @@ class IndexController
             $validated                                         = MSISDN::senitize($postmsisdn);
             if ($validated):
                 $hlr    = new HLR($this->app);
+                $hlr    = new HLRManager($hlr);
                 $lookup = $hlr->lookUp($validated);
                 echo json_encode(['success' => 'success', 'data' => $lookup]);
                 return;

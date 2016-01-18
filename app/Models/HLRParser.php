@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Interfaces\HLRInterface;
+use App\Interfaces\HLRParserInterface;
 use App\Services\HLRLookups;
 
-class HLRParser implements HLRInterface
+class HLRParser implements HLRParserInterface
 {
     /*
     |--------------------------------------------------------------------------

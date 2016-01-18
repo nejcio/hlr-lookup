@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface HLRInterface
 {
-    public function lookItUp();
+    public function lookUp($input);
 }

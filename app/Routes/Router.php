@@ -38,11 +38,14 @@ class Router implements RouterInterface
         $findController = $this->findController($requestDetails);
 
         if ($findController !== null):
-            $controller       = explode("@", $findController);
-            $namespace        = explode("\\", __NAMESPACE__);
-            $objPath          = "\\" . $namespace[0] . "\\" . "Controllers\\" . $controller[0];
-            $controllerObject = new $objPath($this->app);
-            $controllerObject->$controller[1]();
+            $controller        = explode("@", $findController);
+            $namespace         = explode("\\", __NAMESPACE__);
+            $namespace_name    = $namespace[0];
+            $controller_name   = $controller[0];
+            $controller_method = $controller[1];
+            $objPath           = "\\" . $namespace_name . "\\" . "Controllers\\" . $controller_name;
+            $controllerObject  = new $objPath($this->app);
+            $controllerObject->$controller_method();
         else:
             die('404 Page not found, sorry');
         endif;
