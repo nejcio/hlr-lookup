@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\HLR;
+use App\Models\HLRManager;
 use App\Validators\API;
 use App\Validators\MSISDN;
 use Bootstrap\App;
@@ -43,6 +44,7 @@ class APIController
 
             if ($validated):
                 $hlr    = new HLR($this->app);
+                $hlr    = new HLRManager($hlr);
                 $lookup = $hlr->lookUp($validated);
                 echo json_encode(['success' => 'success', 'data' => $lookup]);
                 return;

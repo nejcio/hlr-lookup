@@ -3,27 +3,26 @@
 namespace App\Models;
 
 use App\Interfaces\HLRInterface;
-use App\Models\HLRParser;
 
-class HLR implements HLRInterface
+class HLRManager
 {
     /*
     |--------------------------------------------------------------------------
-    | HLR Model
+    | HLR Manager
     |--------------------------------------------------------------------------
     |
-    | This model does the HLR lookup
+    | Manages HLR lookups
     |
      */
-    protected $app;
+    protected $hlr;
 
     /**
-     * HLR constructor
+     * HLR Manager constructor
      * @param object $app       app spacific object
      */
-    public function __construct($app)
+    public function __construct(HLRInterface $hlr)
     {
-        $this->app = $app;
+        $this->hlr = $hlr;
     }
 
     /**
@@ -35,8 +34,7 @@ class HLR implements HLRInterface
      */
     public function lookUp($input)
     {
-        $hlrparser = new HLRParser($input, $this->app);
-        $response  = $hlrparser->lookItUp();
+        $response = $this->hlr->lookup($input);
         return $response;
     }
 }
